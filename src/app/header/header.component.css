@@ -1,0 +1,225 @@
+:host .navbar-default {
+  background-color: white;
+}
+.header-highlight .navbar-header:not([class*=bg-]) {
+  background-color: #116466;
+  -webkit-box-shadow: 0 0 0 1000px rgba(0,0,0,0.1) inset, 0 -1px 0 rgba(255,255,255,0.1) inset;
+  box-shadow: 0 0 0 1000px rgba(0,0,0,0.1) inset, 0 -1px 0 rgba(255,255,255,0.1) inset;
+}
+.header-highlight .navbar-header {
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  margin-top: -1px;
+  margin-bottom: -1px;
+}
+.navbar-default .navbar-brand {
+  color: #ffffff;
+  padding: 12px 22px;
+}
+.navbar {
+  margin-bottom: 0;
+  border-width: 1px 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+.header-highlight .navbar-header {
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  margin-top: -1px;
+  margin-bottom: -1px;
+}
+.navbar-nav {
+  margin: 0;
+  text-align: left;
+}
+
+li:hover,a:hover, .navbar-default .navbar-nav>.open>a {
+  background-color: #f8f8f8;
+}
+
+.dropdown-content:not(ul) {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.badge {
+  padding: 1px 5px 0 5px;
+  font-size: 10px;
+  letter-spacing: .1px;
+  vertical-align: baseline;
+  border: 1px solid transparent;
+}
+
+.bg-warning-noti {
+  background-color: #ff7043;
+  border-color: #ff7043;
+  color: #fff;
+}
+
+.navbar-nav>li>a>.label, .navbar-nav>li>a>.badge {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+}
+
+.dropdown-menu {
+  min-width: 180px;
+  padding: 5px 0;
+  color: #333;
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.dropdown-menu>li:last-child {
+  margin-bottom: 0;
+}
+.dropdown-menu>li {
+  position: relative;
+  margin-bottom: 1px;
+}
+
+.dropdown-menu>li>a {
+  padding: 8px 15px;
+  outline: 0;
+}
+.dropdown-menu>li>a>i, .dropdown-menu>li>a>img {
+  margin-right: 10px;
+}
+
+.navbar-nav>li>.dropdown-menu {
+  margin-top: 1px;
+  border-top-width: 0;
+}
+.dropdown-content-heading {
+  padding: 20px;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.navbar-nav>li>.dropdown-menu .media-list {
+  max-height: 340px;
+  overflow-y: auto;
+}
+.dropdown-content-heading+.dropdown-content-body {
+  padding-top: 0;
+}
+.media-list {
+  margin-bottom: 0;
+}
+.dropdown-content-body {
+  padding: 20px;
+}
+.dropdown-content-footer {
+  background-color: #fcfcfc;
+  color: #333;
+  border-top: 1px solid #ddd;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.dropdown-content-footer a {
+  display: block;
+  padding: 7px;
+  text-align: center;
+  color: #333;
+}
+.width-noti {
+  width: 350px;
+}
+
+.navbar-nav {
+  margin: 0;
+  text-align: left;
+}
+
+.navbar-header .navbar-nav {
+  float: right;
+  margin-right: 5px;
+}
+.tooltip.fade.top.in{
+  top: 47px;
+  left: 143.898px;
+  display: block;
+  color: #116466;
+}
+
+@media (max-width: 768px){
+  .navbar-nav {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .navbar-nav:last-child {
+    border-bottom: 0;
+  }
+  .navbar-nav>li+li {
+    margin-top: 1px;
+  }
+  .navbar-header .navbar-nav>li+li {
+    margin-top: 0;
+  }
+  .navbar-nav>li>a {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .navbar-collapse.in {
+    overflow-y: initial;
+  }
+  .nav>li {
+    display: inline-block;
+  }
+  .navbar-nav .open .dropdown-menu {
+    position: absolute;
+    float: initial;
+    width: auto;
+    margin-top: 0;
+    right: 0;
+    left: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  }
+  .nav.navbar-nav.navbar-right {
+    float: right;
+  }
+  .navbar-nav .open .dropdown-menu.dropdown-content.width-noti{
+    min-width: 236px;
+    left: 0;
+  }
+  .tooltip.fade.top.in{
+    left: 87.98px;
+  }
+}
+
+.navbar-header .navbar-nav>li {
+  float: left;
+}
+
+  .header-highlight .navbar-header>.navbar-nav>li>a {
+    color: #fff;
+  }
+
+  .navbar-header .navbar-nav>li>a {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .navbar-default .navbar-nav>li>a {
+    color: #333;
+  }
+
+  .navbar-nav li> a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+.visible-xs-block li:hover {
+  background-color: #116466;
+}
+
+.tooltip-inner {
+  background-color: #116466;
+}
+.tooltip.top .tooltip-arrow{
+  border-top-color: #116466;
+}

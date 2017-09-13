@@ -1,0 +1,15 @@
+.myContainer {
+  position: relative;
+}
+
+@media (min-width: 769px) {
+  .myContainer {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+
+  }
+  .myContent {
+    display: table-row;
+  }
+}

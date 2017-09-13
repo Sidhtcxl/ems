@@ -1,0 +1,7 @@
+<app-header (shrinkedEmit)="onShrink($event)" (showSidebar)="onShowSidebar($event)"></app-header>
+<div class="myContainer">
+<div class="myContent">
+<app-sidenav [shrinked]="shrinked" [showSidebar]="showSidebar"></app-sidenav>
+<app-main-content [shrinked]="shrinked"></app-main-content>
+</div>
+</div>

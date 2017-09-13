@@ -1,0 +1,136 @@
+ <form class="login-form" [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+   <input type="email" id="email" placeholder="Email" formControlName="email" #email >
+   <div class="alert alert-success alert-info" *ngIf="emailInfo">
+     <a class="close" (click)="emailInfo = false">&times;</a>
+     <strong>Info!</strong> Please note that all communication related to Army Medical College including link registration for activation etc will be sent to this email.
+   </div>
+   <div *ngIf="registrationForm.controls['email'].hasError('required') && registrationForm.controls['email'].touched" class="alert alert-danger">
+     This field is required
+   </div>
+   <div *ngIf="registrationForm.controls['email'].hasError('pattern') && registrationForm.controls['email'].touched" class="alert alert-danger">
+     Not a valid email
+   </div>
+   <input type="password" id="password" placeholder="Password" formControlName="password" validateEqual="confirm" #password reverse="true">
+   <div class="alert alert-success alert-info" *ngIf="passInfo">
+     <a class="close" (click)="passInfo = false">&times;</a>
+     <strong>Info!</strong> Your password should contain minimum of 6 alpha number character
+   </div>
+   <div *ngIf="registrationForm.controls['password'].hasError('required') && registrationForm.controls['password'].touched" class="alert alert-danger">
+     This field is required
+   </div>
+   <div *ngIf="registrationForm.controls['password'].hasError('minlength') && registrationForm.controls['password'].touched" class="alert alert-danger">
+     Must contain minimum of 6 character
+   </div>
+   <input type="password" id="confirm" [ngClass]="{error: registrationForm.controls['confirm'].errors && registrationForm.controls['confirm'].touched}" placeholder="Confirm Password" formControlName="confirm" validateEqual="password" #confirm>
+   <div *ngIf="registrationForm.controls['confirm'].hasError('required') && registrationForm.controls['confirm'].touched" class="alert alert-danger">
+     This field is required
+   </div>
+   <div *ngIf="registrationForm.controls['confirm'].hasError('validateEqual') && keys(this.registrationForm.controls['confirm'].errors) === 1 && registrationForm.controls['confirm'].touched" class="alert alert-danger">
+     Password Missmatch
+   </div>
+   <input type="text" id="firstName" placeholder="First Name" formControlName="firstname" class="left">
+   <input type="text" id="midName" placeholder="Mid Name" formControlName="middlename" class="left margin-left">
+   <input type="text" id="lastName" placeholder="Last Name" formControlName="lastname" class="left margin-left">
+   <div class="clearfix"></div>
+   <div style="width: 100%" *ngIf="(registrationForm.controls['firstname'].hasError('required') && registrationForm.controls['firstname'].touched) || (registrationForm.controls['lastname'].hasError('required') && registrationForm.controls['lastname'].touched)" class="alert alert-danger">
+     This field is required
+   </div>
+   <div style="width: 100%" *ngIf="(registrationForm.controls['firstname'].hasError('minlength') && registrationForm.controls['firstname'].touched) || (registrationForm.controls['middlename'].hasError('minlength') && registrationForm.controls['middlename'].touched) || (registrationForm.controls['lastname'].hasError('minlength') && registrationForm.controls['lastname'].touched)" class="alert alert-danger">
+     At least 2 characters long
+   </div>
+   <div style="width: 100%" *ngIf="(registrationForm.controls['firstname'].hasError('pattern') && registrationForm.controls['firstname'].touched) || (registrationForm.controls['middlename'].hasError('pattern') && registrationForm.controls['middlename'].touched) || (registrationForm.controls['lastname'].hasError('pattern') && registrationForm.controls['lastname'].touched)" class="alert alert-danger">
+     Name must contain only alphabets
+   </div>
+   <select id="dob" class="left">
+     <option selected disabled>dd</option>
+     <option>1</option>
+     <option>2</option>
+     <option>3</option>
+     <option>4</option>
+     <option>5</option>
+     <option>6</option>
+     <option>7</option>
+     <option>8</option>
+   </select>
+   <select id="month" class="left margin-left">
+     <option selected disabled>mm</option>
+     <option>1</option>
+     <option>2</option>
+     <option>3</option>
+     <option>4</option>
+     <option>5</option>
+     <option>6</option>
+     <option>7</option>
+     <option>8</option>
+   </select>
+   <select id="year" class="left margin-left">
+     <option selected disabled>yyyy</option>
+     <option>1996</option>
+     <option>1997</option>
+     <option>1998</option>
+     <option>1999</option>
+     <option>2000</option>
+     <option>2001</option>
+     <option>2002</option>
+     <option>2003</option>
+   </select>
+   <select id="sex">
+     <option selected>Male</option>
+     <option>Female</option>
+     <option>Other</option>
+   </select>
+   <input type="text" id="fathername" formControlName="fathername" placeholder="Father's Name">
+   <div class="alert alert-success alert-info" *ngIf="fatherInfo">
+     <a class="close" (click)="fatherInfo = false">&times;</a>
+     <strong>Info!</strong> Don't add any salutation like Mr. before name
+   </div>
+   <div *ngIf="registrationForm.controls['fathername'].hasError('required') && registrationForm.controls['fathername'].touched" class="alert alert-danger">
+     This field is required
+   </div>
+   <div *ngIf="registrationForm.controls['fathername'].hasError('minlength') && registrationForm.controls['fathername'].touched" class="alert alert-danger">
+     Must be 2 characters long
+   </div>
+   <div *ngIf="registrationForm.controls['fathername'].hasError('pattern') && registrationForm.controls['fathername'].touched" class="alert alert-danger">
+     Must contain only alphabet
+   </div>
+   <input type="text" id="mothername" formControlName="mothername" placeholder="Mother's Name">
+   <div class="alert alert-success alert-info" *ngIf="motherInfo">
+     <a class="close" (click)="motherInfo = false">&times;</a>
+     <strong>Info!</strong> Don't add any salutation like Mrs. before name
+   </div>
+   <div *ngIf="registrationForm.controls['mothername'].hasError('required') && registrationForm.controls['mothername'].touched" class="alert alert-danger">
+     This field is required
+   </div>
+   <div *ngIf="registrationForm.controls['mothername'].hasError('minlength') && registrationForm.controls['mothername'].touched" class="alert alert-danger">
+     Must be 2 characters long
+   </div>
+   <div *ngIf="registrationForm.controls['mothername'].hasError('pattern') && registrationForm.controls['mothername'].touched" class="alert alert-danger">
+     Must contain only alphabet
+   </div>
+   <input type="text" id="address1" formControlName="address" placeholder="Address Line 1" class="left">
+   <input type="text" id="address2" placeholder="Address Line 2" class="left margin-left">
+   <input type="text" id="address3" placeholder="Address Line 3" class="left margin-left">
+   <div class="clearfix"></div>
+   <div *ngIf="registrationForm.controls['address'].hasError('required') && registrationForm.controls['address'].touched" class="alert alert-danger">
+     This field is required
+   </div>
+   <div *ngIf="registrationForm.controls['address'].hasError('minlength') && registrationForm.controls['address'].touched" class="alert alert-danger">
+     Must be 2 characters long
+   </div>
+   <input type="number" id="mobile" formControlName="mobile" placeholder="Mobile No">
+   <div *ngIf="registrationForm.controls['mobile'].hasError('required') && registrationForm.controls['mobile'].touched" class="alert alert-danger">
+     This field is required
+   </div>
+   <div *ngIf="registrationForm.controls['mobile'].hasError('pattern') && registrationForm.controls['mobile'].touched" class="alert alert-danger">
+     Not a valid mobile no
+   </div>
+   <input type="number" id="counselling" formControlName="counselling" placeholder="Counselling No">
+   <div *ngIf="registrationForm.controls['counselling'].hasError('required') && registrationForm.controls['counselling'].touched" class="alert alert-danger">
+     This field is required
+   </div>
+   <div *ngIf="registrationForm.controls['counselling'].hasError('pattern') && registrationForm.controls['counselling'].touched" class="alert alert-danger">
+     Not a valid counselling no
+   </div>
+   <button type="submit" [ngClass]="{'btn disabled': !registrationForm.valid}" [disabled]="!registrationForm.valid">Register</button>
+   <p class="message">Already registered? <a>Back to Login</a></p>
+ </form>

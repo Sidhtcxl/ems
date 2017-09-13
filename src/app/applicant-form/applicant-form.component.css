@@ -1,0 +1,28 @@
+*[role="form"] {
+  padding: 20px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 0.3em;
+  -moz-box-shadow: 0 1px #fff inset, 0 1px #ddd;
+  -webkit-box-shadow: 0 1px #fff inset, 0 1px #ddd;
+  box-shadow: 0 1px #fff inset, 0 1px #ddd;
+  margin-bottom: 80px;
+  margin-top: 10px;
+}
+
+*[role="form"] h2 {
+  margin-left: 5em;
+  margin-bottom: 1em;
+}
+
+.form-control:focus {
+  border-color: #116466;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(17, 100, 102, .6);
+  box-shadow: none;
+}
+
+@media(max-width: 485px) {
+  h2 {
+    font-size: 20px;
+  }
+}

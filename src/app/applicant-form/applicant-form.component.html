@@ -1,0 +1,305 @@
+<form class="form-horizontal col-sm-12" [formGroup]="applicationForm" role="form">
+  <h2>Applicant Details</h2>
+
+  <h5 class="col-sm-offset-3">All the names must be in Capital Letters only</h5>
+  <div class="form-group" style="padding-top: 20px;border-top: 1px solid #ddd">
+    <label for="firstName" class="col-sm-3 control-label">Candidate Name</label>
+    <div class="col-sm-3">
+      <input type="text" id="firstName" placeholder="First Name" class="form-control" formControlName="firstname">
+    </div>
+    <div class="col-sm-3">
+      <input type="text" id="midName" placeholder="Mid Name" class="form-control" formControlName="midname">
+    </div>
+    <div class="col-sm-3">
+      <input type="text" id="lastName" placeholder="Last Name" class="form-control" formControlName="lastname">
+    </div>
+  </div>
+  <div class="form-group" *ngIf="(applicationForm.controls['firstname'].hasError('required') && applicationForm.controls['firstname'].touched) || (applicationForm.controls['lastname'].hasError('required') && applicationForm.controls['lastname'].touched)">
+    <div class="col-sm-9 col-sm-offset-3"><div class="alert alert-danger" style="text-align: center">This field is required</div></div>
+  </div>
+  <div class="form-group" *ngIf="(applicationForm.controls['firstname'].hasError('pattern') && applicationForm.controls['firstname'].touched) || (applicationForm.controls['lastname'].hasError('pattern') && applicationForm.controls['lastname'].touched) || (applicationForm.controls['midname'].hasError('pattern') && applicationForm.controls['midname'].touched)">
+    <div class="col-sm-9 col-sm-offset-3"><div class="alert alert-danger" style="text-align: center">Must be alphabet and in Capital letters </div></div>
+  </div>
+  <div class="form-group" *ngIf="(applicationForm.controls['firstname'].hasError('minlength') && applicationForm.controls['firstname'].touched) || (applicationForm.controls['lastname'].hasError('minlength') && applicationForm.controls['lastname'].touched) || (applicationForm.controls['midname'].hasError('minlength') && applicationForm.controls['midname'].touched)">
+    <div class="col-sm-9 col-sm-offset-3"><div class="alert alert-danger" style="text-align: center">Must contains at least 2 letters </div></div>
+  </div>
+
+  <div class="form-group">
+    <label for="fathersname" class="col-sm-3 control-label">Father's Name</label>
+    <div class="col-sm-3">
+      <input type="text" id="fathersname" placeholder="Father's Name" class="form-control" formControlName="father">
+    </div>
+  </div>
+  <div class="form-group" *ngIf="applicationForm.controls['father'].hasError('required') && applicationForm.controls['father'].touched">
+    <div class="col-sm-3 col-sm-offset-3"><div class="alert alert-danger" style="text-align: center">This field is required</div></div>
+  </div>
+  <div class="form-group" *ngIf="applicationForm.controls['father'].hasError('minlength') && applicationForm.controls['father'].touched">
+    <div class="col-sm-3 col-sm-offset-3"><div class="alert alert-danger" style="text-align: center">Must contains at least 2 letters</div></div>
+  </div>
+  <div class="form-group" *ngIf="applicationForm.controls['father'].hasError('pattern') && applicationForm.controls['father'].touched">
+    <div class="col-sm-3 col-sm-offset-3"><div class="alert alert-danger" style="text-align: center">Must be alphabet and in Capital letters</div></div>
+  </div>
+  <div class="form-group">
+    <label for="mothername" class="col-sm-3 control-label">Mother's Name</label>
+    <div class="col-sm-3">
+      <input type="text" id="mothername" placeholder="Mother's Name" class="form-control" formControlName="mother">
+    </div>
+  </div>
+  <div class="form-group" *ngIf="applicationForm.controls['mother'].hasError('required') && applicationForm.controls['mother'].touched">
+    <div class="col-sm-3 col-sm-offset-3"><div class="alert alert-danger" style="text-align: center">This field is required</div></div>
+  </div>
+  <div class="form-group" *ngIf="applicationForm.controls['mother'].hasError('minlength') && applicationForm.controls['mother'].touched">
+    <div class="col-sm-3 col-sm-offset-3"><div class="alert alert-danger" style="text-align: center">Must contains at least 2 letters</div></div>
+  </div>
+  <div class="form-group" *ngIf="applicationForm.controls['mother'].hasError('pattern') && applicationForm.controls['mother'].touched">
+    <div class="col-sm-3 col-sm-offset-3"><div class="alert alert-danger" style="text-align: center">Must be alphabet and in Capital letters</div></div>
+  </div>
+
+  <div class="form-group" style="padding-bottom: 20px;border-bottom: 1px solid #ddd">
+    <label for="guardian" class="col-sm-3 control-label">Guardian Name</label>
+    <div class="col-sm-3">
+      <input type="text" id="guardian" placeholder="Guardian Name" class="form-control" formControlName="guardian">
+    </div>
+  </div>
+  <div class="form-group" *ngIf="applicationForm.controls['guardian'].hasError('required') && applicationForm.controls['guardian'].touched">
+    <div class="col-sm-3 col-sm-offset-3"><div class="alert alert-danger" style="text-align: center">This field is required</div></div>
+  </div>
+  <div class="form-group" *ngIf="applicationForm.controls['guardian'].hasError('minlength') && applicationForm.controls['guardian'].touched">
+    <div class="col-sm-3 col-sm-offset-3"><div class="alert alert-danger" style="text-align: center">Must contains at least 2 letters</div></div>
+  </div>
+  <div class="form-group" *ngIf="applicationForm.controls['guardian'].hasError('pattern') && applicationForm.controls['guardian'].touched">
+    <div class="col-sm-3 col-sm-offset-3"><div class="alert alert-danger" style="text-align: center">Must be alphabet and in Capital letters</div></div>
+  </div>
+
+  <div class="form-group">
+    <label for="dob" class="col-sm-3 control-label">Date of Birth</label>
+    <div class="col-sm-3">
+      <select id="dob" class="form-control">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+      </select>
+    </div><div class="col-sm-3">
+    <select id="month" class="form-control">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+      <option>6</option>
+      <option>7</option>
+      <option>8</option>
+    </select>
+  </div>
+    <div class="col-sm-3">
+      <select id="year" class="form-control">
+        <option>1996</option>
+        <option>1997</option>
+        <option>1998</option>
+        <option>1999</option>
+        <option>2000</option>
+        <option>2001</option>
+        <option>2002</option>
+        <option>2003</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="sex" class="col-sm-3 control-label">Sex</label>
+    <div class="col-sm-3">
+      <select id="sex" class="form-control">
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="category" class="col-sm-3 control-label">Category</label>
+    <div class="col-sm-3">
+      <select id="category" class="form-control">
+        <option>Army</option>
+        <option>Def</option>
+        <option>SC/ST</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="physically" class="col-sm-3 control-label">Are You Physically Challenged</label>
+    <div class="col-sm-3">
+      <select id="physically" class="form-control">
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="nationality" class="col-sm-3 control-label">Nationality</label>
+    <div class="col-sm-3">
+      <select id="nationality" class="form-control">
+        <option>Indian</option>
+        <option>Other</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="religion" class="col-sm-3 control-label">Religion</label>
+    <div class="col-sm-3">
+      <select id="religion" class="form-control">
+        <option>Hindu</option>
+        <option>Muslim</option>
+        <option>Other</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="blood" class="col-sm-3 control-label">Blood Group</label>
+    <div class="col-sm-3">
+      <select id="blood" class="form-control">
+        <option>A+</option>
+        <option>B+</option>
+        <option>Other</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="enrno" class="col-sm-3 control-label">GGSIPU Enrollment No</label>
+    <div class="col-sm-3">
+      <input type="number" id="enrno" placeholder="Enrollment No" class="form-control" formControlName="enrollno">
+    </div>
+  </div>
+  <div class="form-group" *ngIf="applicationForm.controls['enrollno'].hasError('pattern') && applicationForm.controls['enrollno'].touched">
+    <div class="col-sm-3 col-sm-offset-3"><div class="alert alert-danger" style="text-align: center">Not a valid enrollment no</div></div>
+  </div>
+  <div class="form-group" *ngIf="applicationForm.controls['enrollno'].hasError('required') && applicationForm.controls['enrollno'].touched">
+    <div class="col-sm-3 col-sm-offset-3"><div class="alert alert-danger" style="text-align: center">This field is required</div></div>
+  </div>
+  <div class="form-group">
+    <label for="neetno" class="col-sm-3 control-label">NEET Roll No</label>
+    <div class="col-sm-3">
+      <input type="number" id="neetno" placeholder="NEET Roll No" class="form-control" formControlName="rollno">
+    </div>
+  </div>
+  <div class="form-group" *ngIf="applicationForm.controls['rollno'].hasError('pattern') && applicationForm.controls['rollno'].touched">
+    <div class="col-sm-3 col-sm-offset-3"><div class="alert alert-danger" style="text-align: center">Not a valid roll no</div></div>
+  </div>
+  <div class="form-group" *ngIf="applicationForm.controls['rollno'].hasError('required') && applicationForm.controls['rollno'].touched">
+    <div class="col-sm-3 col-sm-offset-3"><div class="alert alert-danger" style="text-align: center">This field is required</div></div>
+  </div>
+  <div class="form-group">
+    <label for="rank" class="col-sm-3 control-label">Rank</label>
+    <div class="col-sm-3">
+      <input type="number" id="rank" placeholder="Rank" class="form-control" formControlName="rank">
+    </div>
+  </div>
+  <div class="form-group" *ngIf="applicationForm.controls['rank'].hasError('pattern') && applicationForm.controls['rank'].touched">
+    <div class="col-sm-3 col-sm-offset-3"><div class="alert alert-danger" style="text-align: center">Not a valid rank</div></div>
+  </div>
+  <div class="form-group" *ngIf="applicationForm.controls['rank'].hasError('required') && applicationForm.controls['rank'].touched">
+    <div class="col-sm-3 col-sm-offset-3"><div class="alert alert-danger" style="text-align: center">This field is required</div></div>
+  </div>
+  <div class="form-group">
+    <label for="percentile" class="col-sm-3 control-label">Percentile</label>
+    <div class="col-sm-3">
+      <input type="number" id="percentile" placeholder="Percentile" class="form-control" formControlName="percentile">
+    </div>
+  </div>
+  <div class="form-group" *ngIf="applicationForm.controls['percentile'].hasError('pattern') && applicationForm.controls['percentile'].touched">
+    <div class="col-sm-3 col-sm-offset-3"><div class="alert alert-danger" style="text-align: center">Not a valid percentile</div></div>
+  </div>
+  <div class="form-group" *ngIf="applicationForm.controls['percentile'].hasError('required') && applicationForm.controls['percentile'].touched">
+    <div class="col-sm-3 col-sm-offset-3"><div class="alert alert-danger" style="text-align: center">This field is required</div></div>
+  </div>
+  <div class="form-group">
+    <label for="aadhar" class="col-sm-3 control-label">Aadhar Card No</label>
+    <div class="col-sm-3">
+      <input type="number" id="aadhar" placeholder="Aadhar" class="form-control" formControlName="aadhar" >
+    </div>
+  </div>
+  <div class="form-group" *ngIf="applicationForm.controls['aadhar'].hasError('required') && applicationForm.controls['aadhar'].touched">
+    <div class="col-sm-3 col-sm-offset-3"><div class="alert alert-danger" style="text-align: center">This field is required</div></div>
+  </div>
+  <div class="form-group" *ngIf="applicationForm.controls['aadhar'].hasError('pattern') && applicationForm.controls['aadhar'].touched">
+    <div class="col-sm-3 col-sm-offset-3"><div class="alert alert-danger" style="text-align: center">Not a valid Aadhar card</div></div>
+  </div>
+  <div class="form-group">
+    <label for="addmission" class="col-sm-3 control-label">Addmission Year</label>
+    <div class="col-sm-3">
+      <input type="text" id="addmission" placeholder="Addmission Year" class="form-control" value="2017-2018" disabled>
+    </div>
+  </div>
+
+  <h4 style="padding-top: 20px; border-top: 1px solid #ddd">Permanent Address</h4>
+  <div class="form-group">
+    <label for="address" class="col-sm-3 control-label">Address</label>
+    <div class="col-sm-3">
+      <input type="text" id="address" placeholder="Address" class="form-control" formControlName="address">
+    </div>
+  </div>
+  <div class="form-group" *ngIf="applicationForm.controls['address'].hasError('required') && applicationForm.controls['address'].touched">
+    <div class="col-sm-3 col-sm-offset-3"><div class="alert alert-danger" style="text-align: center">This field is required</div></div>
+  </div>
+
+  <div class="form-group">
+    <label for="district" class="col-sm-3 control-label">District</label>
+    <div class="col-sm-3">
+      <input type="text" id="district" placeholder="District" class="form-control" formControlName="district">
+    </div>
+  </div>
+  <div class="form-group" *ngIf="applicationForm.controls['district'].hasError('required') && applicationForm.controls['district'].touched">
+    <div class="col-sm-3 col-sm-offset-3"><div class="alert alert-danger" style="text-align: center">This field is required</div></div>
+  </div>
+  <div class="form-group" *ngIf="applicationForm.controls['district'].hasError('pattern') && applicationForm.controls['district'].touched">
+    <div class="col-sm-3 col-sm-offset-3"><div class="alert alert-danger" style="text-align: center">Not a valid district</div></div>
+  </div>
+  <div class="form-group">
+    <label for="state" class="col-sm-3 control-label">State</label>
+    <div class="col-sm-3">
+      <select id="state" class="form-control">
+        <option>UP</option>
+        <option>Delhi</option>
+        <option>Other</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="pin" class="col-sm-3 control-label">Pincode</label>
+    <div class="col-sm-3">
+      <input type="number" id="pin" placeholder="Pincode" class="form-control" formControlName="pin">
+    </div>
+  </div>
+  <div class="form-group" *ngIf="applicationForm.controls['pin'].hasError('required') && applicationForm.controls['pin'].touched">
+    <div class="col-sm-3 col-sm-offset-3"><div class="alert alert-danger" style="text-align: center">This field is required</div></div>
+  </div>
+  <div class="form-group" *ngIf="applicationForm.controls['pin'].hasError('pattern') && applicationForm.controls['pin'].touched">
+    <div class="col-sm-3 col-sm-offset-3"><div class="alert alert-danger" style="text-align: center">Not a valid pincode</div></div>
+  </div>
+  <div class="form-group">
+    <label for="mobile" class="col-sm-3 control-label">Mobile No</label>
+    <div class="col-sm-3">
+      <input type="number" id="mobile" placeholder="Mobile No" class="form-control" formControlName="mobile">
+    </div>
+  </div>
+  <div class="form-group" *ngIf="applicationForm.controls['mobile'].hasError('required') && applicationForm.controls['mobile'].touched">
+    <div class="col-sm-3 col-sm-offset-3"><div class="alert alert-danger" style="text-align: center">This field is required</div></div>
+  </div>
+  <div class="form-group" *ngIf="applicationForm.controls['mobile'].hasError('pattern') && applicationForm.controls['mobile'].touched">
+    <div class="col-sm-3 col-sm-offset-3"><div class="alert alert-danger" style="text-align: center">Not a valid mobile no</div></div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-3 col-sm-offset-3">
+      <button type="submit" style="background-color: #116466;border-color: #116466" class="btn btn-primary btn-block" [ngClass]="{disabled: !applicationForm.valid}">Submit</button>
+    </div>
+  </div>
+</form>

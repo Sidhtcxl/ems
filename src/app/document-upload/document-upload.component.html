@@ -1,0 +1,185 @@
+<form class="form-horizontal col-sm-12" [formGroup]="" role="form" (ngSubmit)="onSubmit()">
+  <div class="col-sm-5" style="margin-left: 7%">
+    <h4 class="heading">Photo Upload</h4>
+    <div class="imageContainer col-sm-offset-3">
+      <img src="" class="image1" alt="">
+    </div>
+    <div class="input-cont">
+      <input type="file" (change)="imageUploaded($event,'.image1')">
+    </div>
+    <div class="alert alert-info col-sm-12" style="margin-top: 15px">
+      <strong>Note:</strong> Scanned passport photo should be uploaded within 3.5*4.5 cm and maximum of 100kb size
+    </div>
+  </div>
+  <div class="col-sm-5">
+    <h4 class="heading">Signature Upload</h4>
+    <div class="imageContainer1 col-sm-offset-3">
+      <img src="" class="image2" alt="">
+    </div>
+    <div class="input-cont">
+      <input type="file" (change)="imageUploaded($event,'.image2')">
+    </div>
+    <div class="alert alert-info col-sm-12" style="margin-top: 15px">
+      <strong>Note:</strong> Scanned photo should be uploaded with maximum of 100kb size
+    </div>
+  </div>
+  <div class="col-sm-12" style="border: 1px solid #eee; margin-bottom: 15px" ></div>
+  <div class="clearfix"></div>
+  <h4 class="col-sm-offset-2" style="margin-bottom: 30px;margin-top: 20px;">Civil Documents</h4>
+  <div class="col-sm-12" style="border: 1px solid #eee; margin-bottom: 15px" ></div>
+  <div class="col-sm-12" style="padding-left: 9%">
+    <div class="form-group">
+      <input type="checkbox" class="col-sm-1" style="margin-top: 11px">
+      <label for="10th" class="col-sm-6 control-label" style="text-align: left">10th Standard / Matriculation or Equivalent Pass Certificate</label>
+      <div class="col-sm-4">
+        <input type="file" id="10th" class="form-control" >
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="checkbox" class="col-sm-1" style="margin-top: 11px">
+      <label for="10thm" class="col-sm-6 control-label" style="text-align: left">10th Standard / Matriculation or Equivalent Mark Sheet</label>
+      <div class="col-sm-4">
+        <input type="file" id="10thm" class="form-control" >
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="checkbox" class="col-sm-1" style="margin-top: 11px">
+      <label for="pre" class="col-sm-6 control-label" style="text-align: left">Pre Medical / 12th Standard Examination (HSC) Pass Certificate</label>
+      <div class="col-sm-4">
+        <input type="file" id="pre" class="form-control" >
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="checkbox" class="col-sm-1" style="margin-top: 11px">
+      <label for="prem" class="col-sm-6 control-label" style="text-align: left">Pre Medical / 12th Standard Examination (HSC) Mark Sheet</label>
+      <div class="col-sm-4">
+        <input type="file" id="prem" class="form-control" >
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="checkbox" class="col-sm-1" style="margin-top: 11px">
+      <label for="bsc" class="col-sm-6 control-label" style="text-align: left">BSc Pass Certificate (if applicable)</label>
+      <div class="col-sm-4">
+        <input type="file" id="bsc" class="form-control" >
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="checkbox" class="col-sm-1" style="margin-top: 11px">
+      <label for="bscm" class="col-sm-6 control-label" style="text-align: left">BSc Mark Sheet of the 1st, 2nd & 3rd years (if applicable)</label>
+      <div class="col-sm-4">
+        <input type="file" id="bscm" class="form-control" >
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="checkbox" class="col-sm-1" style="margin-top: 11px">
+      <label for="aff" class="col-sm-6 control-label" style="text-align: left">Affidavit for Gap Certificate (if applicable)</label>
+      <div class="col-sm-4">
+        <input type="file" id="aff" class="form-control" >
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="checkbox" class="col-sm-1" style="margin-top: 11px">
+      <label for="mig" class="col-sm-6 control-label" style="text-align: left">Migration Certificate</label>
+      <div class="col-sm-4">
+        <input type="file" id="mig" class="form-control" >
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="checkbox" class="col-sm-1" style="margin-top: 11px">
+      <label for="cast" class="col-sm-6 control-label" style="text-align: left">Caste Certificate (for SC/ST candidates only)</label>
+      <div class="col-sm-4">
+        <input type="file" id="cast" class="form-control" >
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="checkbox" class="col-sm-1" style="margin-top: 11px">
+      <label for="acc" class="col-sm-6 control-label" style="text-align: left">Acceptance Affidavit from Student and Parent/Guardian regarding Code of Conduct</label>
+      <div class="col-sm-4">
+        <input type="file" id="acc" class="form-control" >
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="checkbox" class="col-sm-1" style="margin-top: 11px">
+      <label for="will" class="col-sm-6 control-label" style="text-align: left">Willingness Certificate</label>
+      <div class="col-sm-4">
+        <input type="file" id="will" class="form-control" >
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="checkbox" class="col-sm-1" style="margin-top: 11px">
+      <label for="char" class="col-sm-6 control-label" style="text-align: left">Character Certificate from the Head of the Institute last attended</label>
+      <div class="col-sm-4">
+        <input type="file" id="char" class="form-control" >
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="checkbox" class="col-sm-1" style="margin-top: 11px">
+      <label for="under" class="col-sm-6 control-label" style="text-align: left">Undertaking by Candidate / Student regarding training in ACMS</label>
+      <div class="col-sm-4">
+        <input type="file" id="under" class="form-control" >
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="checkbox" class="col-sm-1" style="margin-top: 11px">
+      <label for="under1" class="col-sm-6 control-label" style="text-align: left">Undertaking by Parent / Guardian regarding training in ACMS</label>
+      <div class="col-sm-4">
+        <input type="file" id="under1" class="form-control" >
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="checkbox" class="col-sm-1" style="margin-top: 11px">
+      <label for="under2" class="col-sm-6 control-label" style="text-align: left">Undertaking by Candidate / Student regarding admission (Court case)</label>
+      <div class="col-sm-4">
+        <input type="file" id="under2" class="form-control" >
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="checkbox" class="col-sm-1" style="margin-top: 11px">
+      <label for="under3" class="col-sm-6 control-label" style="text-align: left">Undertaking by Parent / Guardian regarding admission (Court case)
+      </label>
+      <div class="col-sm-4">
+        <input type="file" id="under3" class="form-control" >
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="checkbox" class="col-sm-1" style="margin-top: 11px">
+      <label for="arr1" class="col-sm-6 control-label" style="text-align: left">Arrival Report</label>
+      <div class="col-sm-4">
+        <input type="file" id="arr1" class="form-control" >
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="checkbox" class="col-sm-1" style="margin-top: 11px">
+      <label for="police" class="col-sm-6 control-label" style="text-align: left">Police Verification Form</label>
+      <div class="col-sm-4">
+        <input type="file" id="police" class="form-control" >
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="checkbox" class="col-sm-1" style="margin-top: 11px">
+      <label for="six" class="col-sm-6 control-label" style="text-align: left">Six passport size photographs</label>
+      <div class="col-sm-4">
+        <input type="file" id="six" class="form-control" multiple>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-12" style="border: 1px solid #eee; margin-bottom: 15px" ></div>
+  <div class="clearfix"></div>
+  <h4 class="col-sm-offset-2" style="margin-bottom: 30px;margin-top: 20px;">Army Documents</h4>
+  <div class="col-sm-12" style="border: 1px solid #eee; margin-bottom: 15px" ></div>
+  <div class="col-sm-12" style="padding-left: 9%;margin-bottom: 35px">
+    <div class="form-group">
+      <input type="checkbox" class="col-sm-1" style="margin-top: 11px">
+      <label for="army" class="col-sm-6 control-label" style="text-align: left">Army Documents i.e., Discharge book, Dependent card, ECHS Card,
+        Ex-servicemen  I-Card & PPO</label>
+      <div class="col-sm-4">
+        <input type="file" id="army" class="form-control" >
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-3 col-sm-offset-4">
+      <button type="submit" style="background-color: #116466;border-color: #116466" class="btn btn-primary btn-block">Submit</button>
+    </div>
+  </div>
+</form>

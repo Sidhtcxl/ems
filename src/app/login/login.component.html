@@ -1,0 +1,15 @@
+<form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()" autocomplete="off">
+  <input type="text" [ngClass]="{'error': !loginForm.controls['username'].valid && loginForm.controls['username'].touched}" placeholder="Username" formControlName="username" />
+  <div class="alert alert-danger" *ngIf="loginForm.controls['username'].hasError('required') && loginForm.controls['username'].touched">
+    Username is Required
+  </div>
+  <input type="password" placeholder="Password" formControlName="password" [ngClass]="{'error': !loginForm.controls['password'].valid && loginForm.controls['password'].touched}" />
+  <div class="alert alert-danger" *ngIf="loginForm.controls['password'].hasError('required') && loginForm.controls['password'].touched ">
+    Password is Required
+  </div>
+  <div class="alert alert-danger" *ngIf="loginForm.controls['password'].hasError('minlength') && loginForm.controls['password'].touched ">
+    Must be 6 alpha number
+  </div>
+  <button type="submit" [ngClass]="{'btn disabled': !loginForm.valid}" [disabled]="!loginForm.valid">login</button>
+  <p class="message">Not registered? <a routerLink="/registration">Create an account</a></p>
+</form>

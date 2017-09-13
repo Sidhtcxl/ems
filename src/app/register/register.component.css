@@ -1,0 +1,66 @@
+/**[role="form"] {*/
+  /*padding: 20px;*/
+  /*margin: 0 auto;*/
+  /*background-color: #fff;*/
+  /*border-radius: 0.3em;*/
+  /*-moz-box-shadow: 0 1px #fff inset, 0 1px #ddd;*/
+  /*-webkit-box-shadow: 0 1px #fff inset, 0 1px #ddd;*/
+  /*box-shadow: 0 1px #fff inset, 0 1px #ddd;*/
+  /*margin-bottom: 80px;*/
+  /*margin-top: 10px;*/
+/*}*/
+
+/**[role="form"] h2 {*/
+/*margin-left: 5em;*/
+/*margin-bottom: 1em;*/
+/*}*/
+
+/*.form-control:focus {*/
+  /*border-color: #116466;*/
+  /*box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(17, 100, 102, .6);*/
+  /*box-shadow: none;*/
+/*}*/
+
+/*@media(max-width: 485px) {*/
+  /*h2 {*/
+    /*font-size: 20px;*/
+  /*}*/
+/*}*/
+
+input,select {
+  display: block;
+  width: 30%;
+}
+.left {
+  display: inline-block;
+  float: left;
+}
+.margin-left {
+  margin-left: 20px;
+}
+
+select {
+  border: 0;
+  outline: 0;
+}
+
+div {
+  width: 30%;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+@media(max-width: 956px) {
+  input,select,div {
+    width: 100%;
+  }
+  .margin-left {
+    margin-left: 0;
+  }
+}

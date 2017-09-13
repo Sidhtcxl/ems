@@ -1,0 +1,14 @@
+<div class="body">
+  <div class="content">
+    <div class="head" [ngClass]="{rlActive: rl.isActive}">
+      <a href="" routerLinkActive="active" routerLink="/login">Login</a>|<a routerLink="/registration" routerLinkActive="active" #rl="routerLinkActive">Register</a>
+    </div>
+
+    <div class="arrow-up" [ngClass]="{rlActive: rl.isActive}"></div>
+    <div class="formContainer" [ngClass]="{rlActive: rl.isActive}" >
+      <div class="form" [ngClass]="{rlActive: rl.isActive}">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

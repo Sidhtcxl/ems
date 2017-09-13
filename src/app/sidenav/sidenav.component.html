@@ -1,0 +1,30 @@
+<div class="sidebar sidebar-main" [ngStyle]="{height: height}" (@shrinkedMenu.start)="onStart($event)" *ngIf="dont || showSidebar" [@shrinkedMenu]="shrinked ? 'shrinked': 'notShrinked'">
+  <div class="sidebar-content">
+    <div class="sidebar-category sidebar-category-visible">
+      <div class="category-content no-padding">
+        <ul class="navigation navigation-main navigation-accordion" (click)="onClick($event)" >
+          <li (mouseenter)="onEnter($event)" (mouseleave)="onLeave($event)">
+            <a class="has-ul" [ngClass]="{shrinked: shrinked, 'notShrinked' : !shrinked,  active: clickedValue === 'Dashboard' || hovered === 'Dashboard'}"><i class="fa fa-home"></i><div *ngIf="!hidden || hovered === 'Dashboard'" [ngClass]="{hovered: hovered === 'Dashboard'}" @textState><span>Dashboard</span></div></a>
+            <ul *ngIf="clickedValue === 'Dashboard' || hovered === 'Dashboard'" [ngClass]="{hovered: hovered === 'Dashboard'}" @slideState class="hidden-ul">
+              <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+            </ul>
+          </li>
+          <li (mouseenter)="onEnter($event)" (mouseleave)="onLeave($event)">
+            <a class="has-ul" [ngClass]="{shrinked: shrinked, 'notShrinked' : !shrinked,  active: clickedValue === 'Applicant Details' || hovered === 'Applicant Details'}"><i class="fa fa-delicious"></i><div *ngIf="!hidden || hovered === 'Applicant Details'" [ngClass]="{hovered: hovered === 'Applicant Details'}" @textState><span>Applicant Details</span></div></a>
+            <ul *ngIf="clickedValue === 'Applicant Details' || hovered === 'Applicant Details'" [ngClass]="{hovered: hovered === 'Applicant Details'}" @slideState class="hidden-ul">
+              <li><a routerLink="/home/applicationform">Application From</a></li>
+            </ul>
+          </li>
+          <li (mouseenter)="onEnter($event)" (mouseleave)="onLeave($event)">
+            <a class="has-ul" [ngClass]="{shrinked: shrinked, 'notShrinked' : !shrinked,  active: clickedValue === 'Document' || hovered === 'Document'}"><i class="fa fa-id-card-o"></i><div *ngIf="!hidden || hovered === 'Document'" [ngClass]="{hovered: hovered === 'Document'}" @textState><span>Document</span></div></a>
+            <ul *ngIf="clickedValue === 'Document' || hovered === 'Document'" [ngClass]="{hovered: hovered === 'Document'}" @slideState class="hidden-ul">
+              <li><a routerLink="/home/docupload">Document Upload</a></li>
+            </ul>
+          </li>
+
+          <br><br><br><br>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
